@@ -1,0 +1,28 @@
+Robot Design
+--------------
+4 Wheel Intake Mechanism; 2 in the front and 2 in the back to eject
+	-Intake must be upside down or rotate while going up
+-------------------------------------
+To Hold and Transfer Cryptographs - F Design
+	F Design: (Pinned Messages in FTC CHAT on Discord)
+	Deposit cryptographs at 45 deg. angle (obviously)
+-------------------------------------
+Bar On Side with Color Sensor for Jewels (drops and goes back up)
+--------------------------------------
+ROBOT STRATEGY
+	Autonomous:
+		Set cryptograph in front of bot, suck crytograph in while moving forward, deposit cryptograph and park
+		Jewels: just fling bar down; get color; if color is ours: move back. if color is not ours: move forward.
+		Parking: everything is in a set path in the code so we just code it in the movement path.
+
+	Driver Controlled Strategy:
+		Suck in two cryptographs, deposit. Place accordingly to the first cryptograph we did in autonomous (out of the remaining possible combinations)
+			Once We get to relic; we have a extendable bar delivery system to reach the farthest rectangle and deposit it straight up
+	
+		Balancing at the End:
+			Experiment and find the point in which the robot balances. Position the robot in the center of one side and start to go forward. Reach the point mentioned. 
+-------------------------------------
+Mecanum Code: 
+double r = Math.hypot(gamepad1.left_stick_x, gamepad1.left_stick_y); double robotAngle = Math.atan2(gamepad1.left_stick_y, gamepad1.left_stick_x) - Math.PI / 4; double rightX = gamepad1.right_stick_x; final double v1 = r * Math.cos(robotAngle) + rightX; final double v2 = r * Math.sin(robotAngle) - rightX; final double v3 = r * Math.sin(robotAngle) + rightX; final double v4 = r * Math.cos(robotAngle) - rightX; leftFront.setPower(v1); rightFront.setPower(v2); leftRear.setPower(v3) rightRear.setPower(v4);
+-------------------------------------
+//Images for F Mechanism, Wheel Intake, and Drive Train in "FTC CHAT" - "Pinned Messages"
